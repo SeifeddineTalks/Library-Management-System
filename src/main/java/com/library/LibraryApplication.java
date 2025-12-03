@@ -2,16 +2,29 @@ package com.library;
 
 public class LibraryApplication {
     static void main(String[] args) {
-        Book book1 = new Book("One Piece", "Odachi");
-        User user1 = new User("Panguin", "Panguin@gmail.com");
-        User user2 = new User("Cat", "Cat@gmail.com", 22);
 
-        System.out.println(user1.userName);
-        System.out.println(user1.email);
-        System.out.println(user2.userName);
-        System.out.println(user2.email);
-        System.out.println(user2.age);
-        System.out.println(book1.title);
-        System.out.println(book1.author);
+        // testing setters and getters for the book:
+
+        Book book1 =new Book("One piece", "Oda", 200, 1999 );
+
+        System.out.println("The Tile of the Book is: " + book1.getTitle() +  " ,author: " + book1.getAuthor() +
+                            " ,made in year: " + book1.getYear() + " ,price: " + book1.getPrice());
+
+        book1.setPrice(-1);
+        book1.setPrice(50);
+
+        System.out.println("The Tile of the Book is: " + book1.getTitle() +  " ,author: " + book1.getAuthor() +
+                           " ,made in year: " + book1.getYear() + " ,price: " + book1.getPrice());
+
+        // testing for the user:
+
+        User user1= new User("123seif" , "sifo@gmail.com", 24);
+
+        System.out.println("Username: " + user1.getUserName() + " ,Email: " + user1.getEmail()+
+                            " ,Age: " + user1.getAge());
+
+        user1.setAge(0);
+        user1.setUserName("_luffy54");
+        user1.setEmail("luffy.com");
     }
 }
