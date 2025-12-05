@@ -26,5 +26,14 @@ public class LibraryApplication {
         user1.setAge(0);
         user1.setUserName("_luffy54");
         user1.setEmail("luffy.com");
+
+
+        // testing for the librarian:
+
+        Librarian librarian1 = new Librarian ("worker", "worker@gmail.com", 40, 37436);
+
+        System.out.println(librarian1.getAge());
+        librarian1.setAge(80);
+        System.out.println(librarian1.getAge());
     }
 }

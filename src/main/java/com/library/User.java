@@ -52,7 +52,7 @@ public class User {
         }
     }
     void setAge (int age){
-        if(age<=0){
+        if(age<=0 || age>160){
             System.out.println("that's not a valid age");
         }
         else{
