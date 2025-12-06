@@ -27,5 +27,4 @@ public class Librarian extends User {
     return super.details() + " ,the employee ID is: " + getEmployeeId();
     }
 
-
 }
