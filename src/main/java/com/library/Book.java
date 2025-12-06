@@ -24,12 +24,15 @@ public class Book {
     String getTitle() {
         return this.title;
     }
+
     String getAuthor() {
         return this.author;
     }
+
     int getYear(){
         return this.year;
     }
+
     String getPrice(){
         return "$" + this.price;
     }
@@ -43,6 +46,12 @@ public class Book {
             this.price=price;
         }
     }
+
+    // Other methods
+    void displayDetails() {
+        System.out.println("Title: " + getTitle() +
+                ", Author: " + getAuthor() +
+                ", Year: " + getYear() +
+                ", Price: " + getPrice());
     }
-
-
+}

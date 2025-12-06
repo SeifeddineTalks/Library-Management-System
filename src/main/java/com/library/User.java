@@ -19,6 +19,7 @@ public class User {
         this.age=age;
     }
 
+
     //to read:
 
     String getUserName() {
@@ -36,13 +37,14 @@ public class User {
     //to write:
 
     void setUserName (String userName){
-        if(userName.length()<4 || userName.length()>20 || !Character.isLetterOrDigit(userName.charAt(0))){
+        if((userName.length() < 4) || (userName.length() > 20) || !Character.isLetterOrDigit(userName.charAt(0))){
             System.out.println("that's not a valid username");
         }
         else{
             this.userName=userName;
         }
     }
+
     void setEmail (String email){
         if(email.contains("@") && email.contains(".")) {
             this.email = email;
@@ -51,6 +53,7 @@ public class User {
             System.out.println("that's not a valid email");
         }
     }
+
     void setAge (int age){
         if(age<=0 || age>160){
             System.out.println("that's not a valid age");
@@ -58,5 +61,17 @@ public class User {
         else{
             this.age=age;
         }
+    }
+
+    //Other methods
+
+    String details() {
+        return "the name is: " +getUserName()+
+                " ,the email is: " +getEmail()+
+                " ,the age is: " +getAge();
+    }
+
+    void displayDetails() {
+        System.out.println(details());
     }
 }

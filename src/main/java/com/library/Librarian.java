@@ -2,7 +2,7 @@ package com.library;
 
 public class Librarian extends User {
 
-    private int employeeId;
+    private final int employeeId;
 
     Librarian (String userName, String email, int employeeId) {
         super(userName, email);
@@ -14,11 +14,18 @@ public class Librarian extends User {
         this.employeeId = employeeId;
     }
 
-    void setEmployeeId (int employeeId) {
-        this.employeeId=employeeId;
-    }
+    //get
 
     int getEmployeeId() {
         return this.employeeId;
     }
+
+    //Other methods
+
+    @Override
+    String details () {
+    return super.details() + " ,the employee ID is: " + getEmployeeId();
+    }
+
+
 }
