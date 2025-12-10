@@ -1,8 +1,11 @@
 package com.library;
 
 
-
 public class Book extends LibraryItem implements Loanable {
+
+    // TODO Week 3: Move checkout logic to Library service class when we learn collections
+    // This violates SRP - Book should only store book data, not manage loan state
+
     private final String author;
     private final int year;
     private boolean isCheckedOut=false;

@@ -2,6 +2,9 @@ package com.library;
 
 public class Magazine extends LibraryItem implements Loanable{
 
+    // TODO Week 3: Move checkout logic to Library service class when we learn collections
+    // This violates SRP - Magazine should only store magazine data, not manage loan state
+
     private final String publisher;
     private final int issueNumber;
     private int month;
@@ -29,11 +32,13 @@ public class Magazine extends LibraryItem implements Loanable{
         return  this.month;
     }
 
-    boolean getIsAvailable(){
+    boolean IsAvailable(){
         return !this.isCheckedOut;
     }
 
     //setters
+
+    // TODO: Setters should throw exceptions instead of printing error messages (SRP)
 
     void setMonth (int month){
         if(month>12 || month<1){

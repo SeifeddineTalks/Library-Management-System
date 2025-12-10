@@ -36,6 +36,8 @@ public class User {
 
     //to write:
 
+    // TODO: Setters should throw exceptions instead of printing error messages (SRP)
+
     void setUserName (String userName){
         if((userName.length() < 4) || (userName.length() > 20) || !Character.isLetterOrDigit(userName.charAt(0))){
             System.out.println("that's not a valid username");

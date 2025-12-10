@@ -6,6 +6,7 @@ public class LibraryApplication {
         // testing for the book&magazine:
 
         Book book1 =new Book("One piece", "Oda", 200, 1999 );
+        Book book2 =new Book("One piece", "Oda", 200, 1999 );
         LibraryItem magazine1= new Magazine("shonenJump", "Jump",50,7743,10);
         book1.displayDetails();
         magazine1.displayDetails();
@@ -14,6 +15,7 @@ public class LibraryApplication {
         book1.checkOut();
         book1.returnItem();
         System.out.println("Availability: " + book1.isAvailable());
+        System.out.println(book2.getItemId());
 
 
         // Creating both librarian and user using The User showing poly:

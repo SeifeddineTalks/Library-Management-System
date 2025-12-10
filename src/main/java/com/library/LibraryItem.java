@@ -3,11 +3,14 @@ package com.library;
 public abstract class LibraryItem {
     private final String title;
     private int price;
+    private final int  itemId;
+    private static int nextItemId = 1;
 
 
     LibraryItem (String title, int price) {
         this.title =title;
         this.price=price;
+        this.itemId=nextItemId++;
     }
 
     // Getters:
@@ -16,11 +19,18 @@ public abstract class LibraryItem {
         return this.title;
     }
 
-    String getPrice(){
-        return "$" + this.price;
+    int getPrice(){
+        return this.price;
+    }
+
+    int getItemId(){
+        return this.itemId;
     }
 
     // Setters:
+
+    // TODO: Setters should throw exceptions instead of printing error messages (SRP)
+
 
     void setPrice(int price) {
         if(price < 0) {
