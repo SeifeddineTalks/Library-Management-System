@@ -30,6 +30,9 @@ public abstract class LibraryItem {
             this.price=price;
         }
     }
+
+
+    // other methods
     abstract void displayDetails();
 
     abstract String getItemType();

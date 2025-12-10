@@ -11,6 +11,10 @@ public class LibraryApplication {
         magazine1.displayDetails();
         System.out.println("this is a: " + book1.getItemType());
         System.out.println("this is a: " + magazine1.getItemType());
+        book1.checkOut();
+        book1.returnItem();
+        System.out.println("Availability: " + book1.isAvailable());
+
 
         // Creating both librarian and user using The User showing poly:
 
