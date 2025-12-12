@@ -1,5 +1,7 @@
 package com.library;
 
+import java.time.LocalDate;
+
 public class LibraryApplication {
     static void main(String[] args) {
 
@@ -28,5 +30,13 @@ public class LibraryApplication {
 
         user1.displayDetails();
         librarian1.displayDetails();
+
+
+        //testing dates:
+
+        System.out.println(DateUtil.calculateDueDate());
+        System.out.println(DateUtil.daysOverdue(LocalDate.of(2025, 12, 15)));
+        System.out.println(DateUtil.calculateFine(LocalDate.of(2025, 10, 15)));
+
     }
 }
