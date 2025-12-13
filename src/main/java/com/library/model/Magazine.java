@@ -1,6 +1,6 @@
-package com.library;
+package com.library.model;
 
-public class Magazine extends LibraryItem implements Loanable{
+public class Magazine extends LibraryItem implements Loanable {
 
     // TODO Week 3: Move checkout logic to Library service class when we learn collections
     // This violates SRP - Magazine should only store magazine data, not manage loan state
@@ -11,7 +11,7 @@ public class Magazine extends LibraryItem implements Loanable{
     private boolean isCheckedOut=false;
 
 
-    Magazine (String title, String publisher, int price, int issueNumber, int month) {
+    public Magazine(String title, String publisher, int price, int issueNumber, int month) {
         super(title,price);
         this.publisher=publisher;
         this.issueNumber=issueNumber;
@@ -20,19 +20,19 @@ public class Magazine extends LibraryItem implements Loanable{
 
     //getters:
 
-    String getPublisher(){
+    public String getPublisher(){
         return this.publisher;
     }
 
-    int getIssueNumber(){
+    public int getIssueNumber(){
         return this.issueNumber;
     }
 
-    int getMonth(){
+    public int getMonth(){
         return  this.month;
     }
 
-    boolean IsAvailable(){
+    public boolean isAvailable(){
         return !this.isCheckedOut;
     }
 
@@ -40,7 +40,7 @@ public class Magazine extends LibraryItem implements Loanable{
 
     // TODO: Setters should throw exceptions instead of printing error messages (SRP)
 
-    void setMonth (int month){
+    public void setMonth (int month){
         if(month>12 || month<1){
             System.out.println("this isn't a valid month");
         }
@@ -51,7 +51,7 @@ public class Magazine extends LibraryItem implements Loanable{
 
     // Other methods:
 
-    void displayDetails() {
+    public void displayDetails() {
         System.out.println("Title: " + getTitle() +
                            ", Publisher: " + getPublisher() +
                            ", month: " + getMonth() +
@@ -60,7 +60,7 @@ public class Magazine extends LibraryItem implements Loanable{
     }
 
 
-    String getItemType() {
+    public String getItemType() {
         return "Magazine";
     }
 

@@ -1,4 +1,4 @@
-package com.library;
+package com.library.model;
 
 public abstract class LibraryItem {
     private final String title;
@@ -7,7 +7,7 @@ public abstract class LibraryItem {
     private static int nextItemId = 1;
 
 
-    LibraryItem (String title, int price) {
+    protected LibraryItem (String title, int price) {
         this.title =title;
         this.price=price;
         this.itemId=nextItemId++;
@@ -15,15 +15,15 @@ public abstract class LibraryItem {
 
     // Getters:
 
-    String getTitle() {
+    public String getTitle() {
         return this.title;
     }
 
-    int getPrice(){
+    public int getPrice(){
         return this.price;
     }
 
-    int getItemId(){
+    public int getItemId(){
         return this.itemId;
     }
 
@@ -32,7 +32,7 @@ public abstract class LibraryItem {
     // TODO: Setters should throw exceptions instead of printing error messages (SRP)
 
 
-    void setPrice(int price) {
+    public void setPrice(int price) {
         if(price < 0) {
             System.out.println("Price cant be less than zero");
         }
@@ -43,7 +43,7 @@ public abstract class LibraryItem {
 
 
     // other methods
-    abstract void displayDetails();
+    public abstract void displayDetails();
 
-    abstract String getItemType();
+    public abstract String getItemType();
 }

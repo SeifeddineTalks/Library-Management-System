@@ -1,6 +1,14 @@
 package com.library;
 
+import com.library.util.DateUtil;
 import java.time.LocalDate;
+
+import com.library.model.Book;
+import com.library.model.Magazine;
+import com.library.model.LibraryItem;
+import com.library.model.User;
+import com.library.model.Librarian;
+
 
 public class LibraryApplication {
     static void main(String[] args) {
@@ -23,7 +31,7 @@ public class LibraryApplication {
         // Creating both librarian and user using The User showing poly:
 
         User user1= new User("seif", "sifo@gmail.com", 24);
-        User librarian1 = new Librarian ("Nada", "Nada@gmail.com",
+        User librarian1 = new Librarian("Nada", "Nada@gmail.com",
                                          70, 37436);
 
         // testing for the librarian and user:

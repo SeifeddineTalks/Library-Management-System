@@ -1,18 +1,18 @@
-package com.library;
+package com.library.model;
 
 public class User {
     private String userName;
     private String email;
     private int age;
 
-    User (String userName, String email) {
+    public User (String userName, String email) {
 
         this.userName=userName;
         this.email=email;
         this.age=0;
     }
 
-    User (String userName, String email, int age) {
+    public User(String userName, String email, int age) {
 
         this.userName=userName;
         this.email=email;
@@ -22,15 +22,15 @@ public class User {
 
     //to read:
 
-    String getUserName() {
+    public String getUserName() {
         return this.userName;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
-    int getAge() {
+    public int getAge() {
         return this.age;
     }
 
@@ -38,7 +38,7 @@ public class User {
 
     // TODO: Setters should throw exceptions instead of printing error messages (SRP)
 
-    void setUserName (String userName){
+    public void setUserName (String userName){
         if((userName.length() < 4) || (userName.length() > 20) || !Character.isLetterOrDigit(userName.charAt(0))){
             System.out.println("that's not a valid username");
         }
@@ -47,7 +47,7 @@ public class User {
         }
     }
 
-    void setEmail (String email){
+    public void setEmail (String email){
         if(email.contains("@") && email.contains(".")) {
             this.email = email;
         }
@@ -56,7 +56,7 @@ public class User {
         }
     }
 
-    void setAge (int age){
+    public void setAge (int age){
         if(age<=0 || age>160){
             System.out.println("that's not a valid age");
         }
@@ -67,13 +67,13 @@ public class User {
 
     //Other methods
 
-    String details() {
+    public String details() {
         return "the name is: " +getUserName()+
                 " ,the email is: " +getEmail()+
                 " ,the age is: " +getAge();
     }
 
-    void displayDetails() {
+    public void displayDetails() {
         System.out.println(details());
     }
 }

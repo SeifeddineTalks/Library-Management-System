@@ -1,4 +1,4 @@
-package com.library;
+package com.library.util;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -13,17 +13,17 @@ public class DateUtil {
     }
 
 
-    static LocalDate calculateDueDate(){
+    public static LocalDate calculateDueDate(){
         return LocalDate.now().plusDays(loanTime);
     }
 
 
-    static LocalDate calculateDueDate(LocalDate checkoutDate){
+    public static LocalDate calculateDueDate(LocalDate checkoutDate){
         return checkoutDate.plusDays(loanTime);
     }
 
 
-    static long daysOverdue(LocalDate dueDate){
+    public static long daysOverdue(LocalDate dueDate){
         if (LocalDate.now().isAfter(dueDate)) {
             return ChronoUnit.DAYS.between(dueDate, LocalDate.now());
         } else {
@@ -31,9 +31,7 @@ public class DateUtil {
         }
     }
 
-
-    static double calculateFine(LocalDate dueDate){
+    public static double calculateFine(LocalDate dueDate){
         return  daysOverdue(dueDate) * finePerDay;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.library;
+package com.library.model;
 
 
 public class Book extends LibraryItem implements Loanable {
@@ -10,13 +10,13 @@ public class Book extends LibraryItem implements Loanable {
     private final int year;
     private boolean isCheckedOut=false;
 
-    Book (String title, String author, int price) {
+    public Book (String title, String author, int price) {
         super(title,price);
         this.author= author;
         this.year =0;
     }
 
-    Book (String title, String author, int price, int year) {
+    public Book(String title, String author, int price, int year) {
         super(title,price);
         this.author= author;
         this.year =year;
@@ -24,26 +24,26 @@ public class Book extends LibraryItem implements Loanable {
 
     //getters
 
-    String getAuthor() {
+    public String getAuthor() {
         return this.author;
     }
 
-    int getYear(){
+    public int getYear(){
         return this.year;
     }
 
-    String getItemType() {
+    public String getItemType() {
         return "Book";
     }
 
-    boolean isAvailable(){
+    public boolean isAvailable(){
         return !this.isCheckedOut;
     }
 
 
 
     // Other methods
-    void displayDetails() {
+    public void displayDetails() {
         System.out.println("Title: " + getTitle() +
                 ", Author: " + getAuthor() +
                 ", Year: " + getYear() +
