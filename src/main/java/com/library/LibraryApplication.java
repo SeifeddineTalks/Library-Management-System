@@ -1,7 +1,9 @@
 package com.library;
 
+import com.library.service.LibraryService;
 import com.library.util.DateUtil;
 import java.time.LocalDate;
+import java.util.List;
 
 import com.library.model.Book;
 import com.library.model.Magazine;
@@ -16,7 +18,8 @@ public class LibraryApplication {
         // testing for the book&magazine:
 
         Book book1 =new Book("One piece", "Oda", 200, 1999 );
-        Book book2 =new Book("One piece", "Oda", 200, 1999 );
+        Book book2 =new Book("Solo", "Oda", 200, 1999 );
+        Book book3 =new Book("solo", "Oda", 200, 1999 );
         LibraryItem magazine1= new Magazine("shonenJump", "Jump",50,7743,10);
         book1.displayDetails();
         magazine1.displayDetails();
@@ -46,5 +49,21 @@ public class LibraryApplication {
         System.out.println(DateUtil.daysOverdue(LocalDate.of(2025, 12, 15)));
         System.out.println(DateUtil.calculateFine(LocalDate.of(2025, 10, 15)));
 
+        //testing inventory :
+
+        System.out.println("-------------------------------------");
+        LibraryService inventory1= new LibraryService();
+        inventory1.addBook(book1);
+        inventory1.addBook(book3);
+        inventory1.addBook(book2);
+        System.out.println(inventory1.getInventorySize());
+        inventory1.removeBook(book2);
+
+        List<Book> allBooks = inventory1.getAllBooks();
+        for (int i = 0; i < allBooks.size(); i++) {
+            Book book = allBooks.get(i);
+            System.out.println("Book N"+(i+1)+":");
+            book.displayDetails();
+        }
     }
 }

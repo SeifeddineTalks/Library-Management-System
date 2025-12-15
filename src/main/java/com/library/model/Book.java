@@ -47,7 +47,8 @@ public class Book extends LibraryItem implements Loanable {
         System.out.println("Title: " + getTitle() +
                 ", Author: " + getAuthor() +
                 ", Year: " + getYear() +
-                ", Price: " + getPrice());
+                ", Price: " + getPrice() +
+                ", Id: " + getItemId());
     }
 
 
