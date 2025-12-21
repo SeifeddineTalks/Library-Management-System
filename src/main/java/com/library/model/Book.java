@@ -1,6 +1,8 @@
 package com.library.model;
 
 
+import java.lang.foreign.MemorySegment;
+
 public class Book extends LibraryItem implements Loanable {
 
     // TODO Week 3: Move checkout logic to Library service class when we learn collections

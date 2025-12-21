@@ -15,54 +15,15 @@ import com.library.model.Librarian;
 public class LibraryApplication {
     static void main(String[] args) {
 
-        // testing for the book&magazine:
-
-        Book book1 =new Book("One piece", "Oda", 200, "H7KED" , 1999 );
-        Book book2 =new Book("Solo", "Oda", 200, "H8KED" , 2000 );
-        Book book3 =new Book("solo", "Oda", 200, "H8KED" , 2000 );
-        LibraryItem magazine1= new Magazine("shonenJump", "Jump",50,7743,10);
-        book1.displayDetails();
-        magazine1.displayDetails();
-        System.out.println("this is a: " + book1.getItemType());
-        System.out.println("this is a: " + magazine1.getItemType());
-        book1.checkOut();
-        book1.returnItem();
-        System.out.println("Availability: " + book1.isAvailable());
-        System.out.println(book2.getItemId());
+        Book book1 = new Book("harrypotter", "whatever", 40, "H7F5", 2000);
+        Book book2 = new Book("harrypotter", "whatever", 40, "H7F5", 2000);
 
 
-        // Creating both librarian and user using The User showing poly:
+        LibraryService inventory1 = new LibraryService();
 
-        User user1= new User("seif", "sifo@gmail.com", 24);
-        User librarian1 = new Librarian("Nada", "Nada@gmail.com",
-                                         70, 37436);
-
-        // testing for the librarian and user:
-
-        user1.displayDetails();
-        librarian1.displayDetails();
-
-
-        //testing dates:
-
-        System.out.println(DateUtil.calculateDueDate());
-        System.out.println(DateUtil.daysOverdue(LocalDate.of(2025, 12, 15)));
-        System.out.println(DateUtil.calculateFine(LocalDate.of(2025, 10, 15)));
-
-        //testing inventory :
-
-        System.out.println("-------------------------------------");
-        LibraryService inventory1= new LibraryService();
         inventory1.addBook(book1);
-        inventory1.addBook(book3);
         inventory1.addBook(book2);
 
-        // add toString method later -- the inventory1.findBookByISBN("H8KED") prints an address
-        // because im trying to access an object which does not  have to string defined yet
-        Book found = inventory1.findBookByISBN("H8KED");
-        if (found != null) {
-            found.displayDetails();
-        }
     }
 
 

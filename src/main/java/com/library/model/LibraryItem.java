@@ -4,7 +4,7 @@ public abstract class LibraryItem {
     private final String title;
     private int price;
     private final int  itemId;
-    private static int nextItemId = 1;
+    private static int nextItemId = 1; // bad practise
 
 
     protected LibraryItem (String title, int price) {
