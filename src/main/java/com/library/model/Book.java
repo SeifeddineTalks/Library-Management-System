@@ -8,17 +8,20 @@ public class Book extends LibraryItem implements Loanable {
 
     private final String author;
     private final int year;
+    private final String ISBN;
     private boolean isCheckedOut=false;
 
-    public Book (String title, String author, int price) {
+    public Book (String title, String author, int price, String ISBN) {
         super(title,price);
         this.author= author;
+        this.ISBN=ISBN;
         this.year =0;
     }
 
-    public Book(String title, String author, int price, int year) {
+    public Book(String title, String author, int price, String ISBN, int year) {
         super(title,price);
         this.author= author;
+        this.ISBN=ISBN;
         this.year =year;
     }
 
@@ -39,7 +42,9 @@ public class Book extends LibraryItem implements Loanable {
     public boolean isAvailable(){
         return !this.isCheckedOut;
     }
-
+    public String getISBN(){
+        return this.ISBN;
+    }
 
 
     // Other methods

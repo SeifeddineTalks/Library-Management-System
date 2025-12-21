@@ -17,9 +17,9 @@ public class LibraryApplication {
 
         // testing for the book&magazine:
 
-        Book book1 =new Book("One piece", "Oda", 200, 1999 );
-        Book book2 =new Book("Solo", "Oda", 200, 1999 );
-        Book book3 =new Book("solo", "Oda", 200, 1999 );
+        Book book1 =new Book("One piece", "Oda", 200, "H7KED" , 1999 );
+        Book book2 =new Book("Solo", "Oda", 200, "H8KED" , 2000 );
+        Book book3 =new Book("solo", "Oda", 200, "H8KED" , 2000 );
         LibraryItem magazine1= new Magazine("shonenJump", "Jump",50,7743,10);
         book1.displayDetails();
         magazine1.displayDetails();
@@ -56,14 +56,16 @@ public class LibraryApplication {
         inventory1.addBook(book1);
         inventory1.addBook(book3);
         inventory1.addBook(book2);
-        System.out.println(inventory1.getInventorySize());
-        inventory1.removeBook(book2);
 
-        List<Book> allBooks = inventory1.getAllBooks();
-        for (int i = 0; i < allBooks.size(); i++) {
-            Book book = allBooks.get(i);
-            System.out.println("Book N"+(i+1)+":");
-            book.displayDetails();
+        // add toString method later -- the inventory1.findBookByISBN("H8KED") prints an address
+        // because im trying to access an object which does not  have to string defined yet
+        Book found = inventory1.findBookByISBN("H8KED");
+        if (found != null) {
+            found.displayDetails();
         }
     }
+
+
+
+
 }
