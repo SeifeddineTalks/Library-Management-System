@@ -23,10 +23,9 @@ public class LibraryApplication {
 
         inventory1.addBook(book1);
         inventory1.addBook(book2);
+        System.out.println(inventory1.findBookByISBN("H7F5"));
+
 
     }
-
-
-
 
 }

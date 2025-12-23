@@ -2,11 +2,11 @@ package com.library.model;
 
 
 import java.lang.foreign.MemorySegment;
+import java.util.Objects;
 
 public class Book extends LibraryItem implements Loanable {
 
-    // TODO Week 3: Move checkout logic to Library service class when we learn collections
-    // This violates SRP - Book should only store book data, not manage loan state
+
 
     private final String author;
     private final int year;
@@ -50,6 +50,30 @@ public class Book extends LibraryItem implements Loanable {
 
 
     // Other methods
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Book book)) return false;
+        return Objects.equals(this.getISBN(), book.getISBN());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(this.getISBN());
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + getTitle() + '\'' +
+                ", author='" + getAuthor() + '\'' +
+                ", year=" + getYear() +
+                ", ISBN='" + getISBN() + '\'' +
+                ", isAvailable=" + isAvailable() +
+                '}';
+    }
+
     public void displayDetails() {
         System.out.println("Title: " + getTitle() +
                 ", Author: " + getAuthor() +
