@@ -1,9 +1,10 @@
 package com.library;
 
 import com.library.service.LibraryService;
+import com.library.util.BookAuthorTitleComparator;
 import com.library.util.DateUtil;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 
 import com.library.model.Book;
 import com.library.model.Magazine;
@@ -15,15 +16,31 @@ import com.library.model.Librarian;
 public class LibraryApplication {
     static void main(String[] args) {
 
-        Book book1 = new Book("harrypotter", "whatever", 40, "H7F5", 2000);
-        Book book2 = new Book("harrypotter", "whatever", 40, "H7F5", 2000);
 
 
         LibraryService inventory1 = new LibraryService();
 
-        inventory1.addBook(book1);
-        inventory1.addBook(book2);
-        System.out.println(inventory1.findBookByISBN("H7F5"));
+        String[] authors = {"Smith", "Jones", "Smith", "Davis", "Jones"};
+        String[] titles = {"Zoo", "Apple", "Banana", "Elephant", "Zebra"};
+
+        for (int i = 0; i < authors.length; i++) {
+            Book book = new Book(titles[i], authors[i], 20 + i, "ISBN" + i, 2020 + i);
+            inventory1.addBook(book);
+        }
+
+
+
+        System.out.println(inventory1.sortBooks());
+
+
+
+
+
+
+
+
+
+
 
 
     }

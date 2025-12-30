@@ -1,8 +1,10 @@
 package com.library.service;
 
 import com.library.model.Book;
+import com.library.util.BookAuthorTitleComparator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -49,6 +51,14 @@ public class LibraryService {
 
     public Book findBookByISBN(String isbn){
         return this.booksByISBN.get(isbn);
+    }
+
+    public List <Book> sortBooks(){
+
+        Comparator<Book> com = new BookAuthorTitleComparator();
+        List<Book> sortedBooks = this.getAllBooks();
+        sortedBooks.sort(com);
+        return sortedBooks;
     }
 
 
